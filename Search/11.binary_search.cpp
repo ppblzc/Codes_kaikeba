@@ -20,8 +20,8 @@ int binary_search(int *arr, int n, int x){
 //11111111110000000000查找最后一个1
 int binary_search1(int *arr, int n, int x){
     int head = -1, tail = n - 1, mid;//head,虚拟位
-    while (head < tail + 1) {
-        mid = (head + tail) >> 1;
+    while (head < tail) {
+        mid = (head + tail + 1) >> 1;
         if (arr[mid] == x) head = mid;
         else tail = mid - 1;
     }
@@ -62,7 +62,7 @@ int main(){
     int arr2[10] = {1, 1, 1, 1, 0, 0, 0, 0, 0, 0};
     int arr3[10] = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1};
     P(binary_search(arr1, 10, 7));
-    P(binary_search1(arr2, 10, 7));
-    P(binary_search2(arr3, 10, 7));
+    P(binary_search1(arr2, 10, 1));
+    P(binary_search2(arr3, 10, 1));
     return 0;
 }
