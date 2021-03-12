@@ -1,0 +1,18 @@
+/*
+题目描述：
+求小于1000的自然数中所有3或5的倍数之和。
+*/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int sum = 0;
+    for(int i = 1; i < 1000; i++){
+        if (i % 3 == 0 || i % 5 == 0){
+            sum += i;
+        }
+    }
+    cout << sum << endl;
+    return 0;
+}
