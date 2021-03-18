@@ -15,7 +15,7 @@ int main(){
     cout << ans << endl;
     return 0;
 }
-
+//回文数判断
 int func(int n) {
     int raw = n, t = 0;
     while(n){
