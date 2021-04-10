@@ -4,13 +4,12 @@
  * @version: 
  * @Date: 2021-04-07 17:16:17
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-04-07 23:15:42
+ * @LastEditTime: 2021-04-08 09:08:16
  */
 #include<iostream>
 #include<queue>
 using namespace std;
 
-queue<int> que;
 int func(int x) {
     if (x % 7 == 0) return 1;
     while(x) {
@@ -22,10 +21,11 @@ int func(int x) {
 int main(){
     int n, x, t;
     cin >> n >> x >> t;
+    queue<int> que;
     for (int i = x; i <= n; i++) {
         que.push(i);
     }
-    for (int i = 0; i < x; i++) {
+    for (int i = 1; i < x; i++) {//i从1开始，不是0
         que.push(i);
     }
     while (que.size() != 1) {
