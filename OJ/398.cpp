@@ -1,11 +1,13 @@
 /*
- * @Descripttion: 398 马的遍历
+ * @Descripttion: 398 马的遍历 广搜 方向数组
  * @Author: Arthur Lin
  * @version: 
  * @Date: 2021-04-17 23:31:29
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-04-17 23:50:48
+ * @LastEditTime: 2021-04-18 10:10:48
  */
+
+//广搜，使用单向队列实现
 
 #include<iostream>
 #include<queue>
@@ -25,8 +27,8 @@ int main() {
     queue<node> que;
     que.push((node){sx, sy, 0});//搜索队列
     while (!que.empty()) {
-        node temp = que.front();
-        que.pop();
+        node temp = que.front();//以此为父节点，进行八个方向数组的子节点的遍历
+        que.pop();//弹出，将子节点更新为父节点做准备
         for (int i = 0; i < 8; i++) {
             int x = temp.x + dir[i][0];
             int y = temp.y + dir[i][1];
@@ -35,6 +37,7 @@ int main() {
                 continue;
             }
             ans[x][y] = temp.step + 1;
+            //将子节点入队列，下一轮while循环中，会上升为父节点，进行广度搜索
             que.push((node){x, y, ans[x][y]});
         }
     }

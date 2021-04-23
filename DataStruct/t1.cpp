@@ -4,7 +4,7 @@
  * @version: 
  * @Date: 2021-04-12 21:54:39
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-04-15 22:22:08
+ * @LastEditTime: 2021-04-19 21:52:20
  */
 
 
@@ -20,21 +20,21 @@ int main() {
     while (getline(cin, s)) {
         for (int i = 0; i < s.size(); i++) {
             if (s[i] == '.') {
-            while (!sta.empty()) {
-                cout << sta.top();
-                sta.pop();
+                while (!sta.empty()) {
+                    cout << sta.top();
+                    sta.pop();
+                }
+                cout << "." << endl;
+                return 0;
+            } else if (s[i] == ' ') {
+                while (!sta.empty()) {
+                    cout << sta.top();
+                    sta.pop();
+                }
+                cout << " ";
+            } else {
+                sta.push(s[i]);
             }
-            cout << "." << endl;
-            return 0;
-        } else if (s[i] == ' ') {
-            while (!sta.empty()) {
-                cout << sta.top();
-                sta.pop();
-            }
-            cout << " ";
-        } else {
-            sta.push(s[i]);
-        }
         }
         
     }

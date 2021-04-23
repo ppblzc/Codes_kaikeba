@@ -4,10 +4,10 @@
  * @version: 
  * @Date: 2021-04-17 18:32:32
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-04-17 22:08:06
+ * @LastEditTime: 2021-04-18 11:24:34
  */
 
-//广搜
+//广搜走地图
 //队列
 #include<iostream>
 #include<queue>
@@ -33,6 +33,7 @@ int main() {
     }
     queue<node> que;//搜索队列
     que.push((node){sx, sy, 0});
+    //以下while的结构实现了广搜
     while (!que.empty()) {
         node temp = que.front();
         que.pop();
